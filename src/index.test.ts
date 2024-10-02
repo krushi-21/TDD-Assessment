@@ -35,4 +35,26 @@ describe("String Calculator", () => {
   it("should return 0 for a string with only new lines and no numbers", () => {
     expect(calculator.add("\n\n")).toBe(0);
   });
+
+  //new test cases for step-4
+
+  it("should handle custom delimiter ';'", () => {
+    expect(calculator.add("//;\n1;2")).toBe(3);
+  });
+
+  it("should handle custom delimiter '|'", () => {
+    expect(calculator.add("//|\n1|2|3")).toBe(6);
+  });
+
+  it("should handle custom delimiter '*' and return sum", () => {
+    expect(calculator.add("//*\n4*5*6")).toBe(15);
+  });
+
+  it("should handle a custom delimiter ',' when explicitly specified", () => {
+    expect(calculator.add("//,\n7,8,9")).toBe(24);
+  });
+
+  it("should handle a complex custom delimiter '%' and return sum", () => {
+    expect(calculator.add("//%\n1%2%3")).toBe(6);
+  });
 });
