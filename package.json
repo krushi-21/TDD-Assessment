@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "dev": "node dist/src/index.js"
+    "test": "jest"
   },
   "author": "krushi",
   "license": "ISC",

@@ -17,6 +17,14 @@ export class StringCalculator {
       return isNaN(parsed) ? 0 : parsed;
     });
 
+    // Check for negative numbers
+    const negativeNumbers = numberArray.filter((num) => num < 0);
+    if (negativeNumbers.length > 0) {
+      throw new Error(
+        `negative numbers not allowed ${negativeNumbers.join(", ")}`
+      );
+    }
+
     return numberArray.reduce((sum, num) => sum + num, 0);
   }
 }

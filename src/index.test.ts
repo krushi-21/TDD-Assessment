@@ -57,4 +57,23 @@ describe("String Calculator", () => {
   it("should handle a complex custom delimiter '%' and return sum", () => {
     expect(calculator.add("//%\n1%2%3")).toBe(6);
   });
+
+  //test for step-5 checking negative numbers
+  it("should throw an error for a negative number", () => {
+    expect(() => calculator.add("1,-2")).toThrow(
+      "negative numbers not allowed -2"
+    );
+  });
+
+  it("should throw an error for multiple negative numbers", () => {
+    expect(() => calculator.add("1,-2,-3")).toThrow(
+      "negative numbers not allowed -2, -3"
+    );
+  });
+
+  it("should throw an error for negative numbers with custom delimiters", () => {
+    expect(() => calculator.add("//;\n1;-2;3;-4")).toThrow(
+      "negative numbers not allowed -2, -4"
+    );
+  });
 });
